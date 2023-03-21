@@ -1,0 +1,126 @@
+:root {
+    --alphabet-width: 2rem;
+    --alphabet-height: 60%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Cousine', monospace;
+}
+
+* {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+-moz-tap-highlight-color: transparent;
+}
+
+#main__hero {
+    display: grid;
+    place-items:center;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+ }
+ 
+ 
+#title {
+    margin-block: 1rem;    
+}
+
+
+#title::after{
+    display: none;
+}
+
+
+
+#alphabet-list {
+    width: var(--alphabet-width); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    right: 0;
+    font-size: 1rem;
+    height: var(--alphabet-height);
+    margin-top: auto;
+}
+
+#alphabet-list > a {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    flex-grow: 1;
+
+}
+
+#main-list {
+    font-size: 2rem;
+    width: calc(100vw - var(--alphabet-width));
+}
+
+/* все */
+#main-list div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* улица */
+#main-list > div {
+    padding-top: 2rem;
+    margin-left: 1rem;
+    scroll-snap-align: start;
+}
+#main-list > div::after {
+    content: "";
+    background: #eee;
+    border: 1px solid #eee;
+    width: 50%;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    border-radius: 1px;
+}
+/* номер дома */
+#main-list > div > div {
+    flex-direction: row;
+    margin-left: 1.5rem;    
+    padding-top: .5rem;
+    align-items: center;
+    font-size: 1.5rem;
+}
+#main-list > div > div::before{
+    content: "Дом";
+    margin-right: .5rem;
+}
+/* контейнер для подъезда */
+#main-list > div > div > div {
+    display: block;
+    width: 100%;
+}
+
+/* подъезд */
+#main-list > div > div > div > div {
+    display: flex;
+    flex-direction: row;    
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+#main-list > div > div > div > div::before {
+    content: "п";
+}
+
+/* код */
+#main-list > div > div > div > div > div {
+    margin-left: 1rem;
+}
+
+
